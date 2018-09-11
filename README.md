@@ -2,6 +2,11 @@
 
 ## Description
 
+Web App to get information about films through MovieDB API.
+Dependencies used:
+- styled components
+- typescript- 
+
 ## Getting Started
 
 
