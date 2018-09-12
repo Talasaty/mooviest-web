@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { withFormik, FormikProps, Form, Field } from 'formik';
 import styled from 'styled-components';
+import getData from './Search.presenter';
 
-const FieldStyled = styled(Field)`
+const FieldStyled = styled(Field)<{word: string}>`
     background-color: #ece5dd;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -12,9 +13,10 @@ const FieldStyled = styled(Field)`
     font-size: 25px;
     padding: 5px;
     width: 20px;
+    outline: none;
     -webkit-transition: width .2s;
     min-width: 20px;
-    
+    width: ${p => p.word === "true" ? '200px' : '20px'};
 
     &:hover {
         width: 200px;
@@ -32,6 +34,7 @@ const Button = styled.button`
     color: #075e54;
     border-color: #075e54;
     background-color: #ece5dd;
+    outline: none;
 `
 
 interface Values {
@@ -40,9 +43,11 @@ interface Values {
 
 const InnerForm = (props: FormikProps<Values>) => {
     const { touched, errors } = props
+    console.log(props.values)
+    
     return(
         <Form>
-            <FieldStyled type="keyWord" name="keyWord" />
+            <FieldStyled type="keyWord" name="keyWord" word={props.values.keyWord !== "" ? "true" : "false"}/>
             { touched.keyWord && errors.keyWord && <div>{errors.keyWord}</div> }
             <Button type="submit">
             >
@@ -63,6 +68,7 @@ const MyForm = withFormik<MyValues, Values>({
     },
     handleSubmit: values => {
         console.log('values:', values)
+        console.log(getData)
     },
 })(InnerForm)
     
