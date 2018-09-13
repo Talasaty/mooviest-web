@@ -1,8 +1,8 @@
-import * as React from "react";
-// import styled from 'styled-components';
+import * as React from 'react';
 
-// Components
-import Header from "./Components/Header/Header.view";
+import Header from './Components/Header/Header.view';
+
+import Search from './Componentes/Search/Search.view';
 
 class App extends React.Component {
   public render() {
@@ -13,5 +13,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
