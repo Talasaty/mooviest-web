@@ -1,18 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import img from "../../img/logo_mooviest.png";
-
 interface StyleProps {
   hover: boolean;
 }
-
-const Logo = img;
-
-const Logo_Navbar = styled.img`
-  height: 20px;
-  width: 20px;
-`;
 
 const Navbar_wrapper = styled.nav`
   position: fixed;
@@ -21,45 +12,47 @@ const Navbar_wrapper = styled.nav`
   width: 100%;
   height: 100px;
   z-index: 999;
+  padding-left: 35px;
   font-size: 1.2em;
-  background: rgba(95, 143, 224, 1);
+  background: rgba(148, 0, 20, 1);
+  background: -moz-linear-gradient(
+    left,
+    rgba(148, 0, 20, 1) 0%,
+    rgba(191, 3, 28, 1) 58%,
+    rgba(231, 4, 34, 1) 100%
+  );
   background: -webkit-gradient(
     left top,
     right top,
-    color-stop(0%, rgba(95, 143, 224, 1)),
-    color-stop(21%, rgba(95, 143, 224, 1)),
-    color-stop(78%, rgba(205, 109, 169, 1)),
-    color-stop(100%, rgba(205, 109, 169, 1))
+    color-stop(0%, rgba(148, 0, 20, 1)),
+    color-stop(58%, rgba(191, 3, 28, 1)),
+    color-stop(100%, rgba(231, 4, 34, 1))
   );
   background: -webkit-linear-gradient(
     left,
-    rgba(95, 143, 224, 1) 0%,
-    rgba(95, 143, 224, 1) 21%,
-    rgba(205, 109, 169, 1) 78%,
-    rgba(205, 109, 169, 1) 100%
+    rgba(148, 0, 20, 1) 0%,
+    rgba(191, 3, 28, 1) 58%,
+    rgba(231, 4, 34, 1) 100%
   );
   background: -o-linear-gradient(
     left,
-    rgba(95, 143, 224, 1) 0%,
-    rgba(95, 143, 224, 1) 21%,
-    rgba(205, 109, 169, 1) 78%,
-    rgba(205, 109, 169, 1) 100%
+    rgba(148, 0, 20, 1) 0%,
+    rgba(191, 3, 28, 1) 58%,
+    rgba(231, 4, 34, 1) 100%
   );
   background: -ms-linear-gradient(
     left,
-    rgba(95, 143, 224, 1) 0%,
-    rgba(95, 143, 224, 1) 21%,
-    rgba(205, 109, 169, 1) 78%,
-    rgba(205, 109, 169, 1) 100%
+    rgba(148, 0, 20, 1) 0%,
+    rgba(191, 3, 28, 1) 58%,
+    rgba(231, 4, 34, 1) 100%
   );
   background: linear-gradient(
     to right,
-    rgba(95, 143, 224, 1) 0%,
-    rgba(95, 143, 224, 1) 21%,
-    rgba(205, 109, 169, 1) 78%,
-    rgba(205, 109, 169, 1) 100%
+    rgba(148, 0, 20, 1) 0%,
+    rgba(191, 3, 28, 1) 58%,
+    rgba(231, 4, 34, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f8fe0', endColorstr='#cd6da9', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#940014', endColorstr='#e70422', GradientType=1 );
 `;
 
 const SubNavbar_ul = styled.ul<StyleProps>`
@@ -67,6 +60,7 @@ const SubNavbar_ul = styled.ul<StyleProps>`
   position: absolute;
   top: 80%;
   padding-left: 1em;
+  font-family: 'Courier New', Courier, monospace
 `;
 
 const SubNavbar_li = styled.li`
@@ -80,6 +74,7 @@ const Navbar_ul = styled.ul`
   flex-direction: row;
   position: relative;
   color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 // Cambiar
@@ -98,6 +93,17 @@ const Navbar_li = styled.li`
   }
 `;
 
+const Navbar_logo = styled.p`
+  font-family: pacifico;
+  font-weight: 400;
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  margin: 15px;
+  padding: 0;
+  align-content: center;
+  float: left;
+`;
+
 class Navbar extends React.Component {
   state = {
     rankingHover: false,
@@ -109,14 +115,10 @@ class Navbar extends React.Component {
     return (
       <div className="Navbar-wrapper">
         <Navbar_wrapper>
+          <div>
+            <Navbar_logo>M</Navbar_logo>
+          </div>
           <Navbar_ul>
-            <div>
-              <Navbar_li>
-                <a href="#">
-                  <Logo_Navbar src={Logo} />
-                </a>
-              </Navbar_li>
-            </div>
             <div
               onMouseEnter={() => this.setState({ rankingHover: true })}
               onMouseLeave={() => this.setState({ rankingHover: false })}
