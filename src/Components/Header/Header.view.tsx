@@ -1,7 +1,6 @@
 import * as React from "react";
-// import styled from "styled-components";
 
-// Components
+import styled from "styled-components";
 import Navbar from '../Navbar/Navbar.view';
 
 
