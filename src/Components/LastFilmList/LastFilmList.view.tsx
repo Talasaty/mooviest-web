@@ -7,7 +7,7 @@ import { Pelicula } from "../Film/Film.view";
 const Lastfilmdiv = styled.div`
   position: relative;
   display: flex;
-  margin: auto 0;
+  margin:  0;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;

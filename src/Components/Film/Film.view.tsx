@@ -1,13 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
+// import LastFilmList from "../LastFilmList/LastFilmList.view";
 
 const LastFilmItem = styled.div<{ img: string }>`
   flex-grow: 5;
   width: 200px;
   height: 200px;
   margin: 1px;
-  padding: 20px;
-  /* line-height: 200px; */
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1rem;
   text-align: justify;
@@ -17,6 +16,19 @@ const LastFilmItem = styled.div<{ img: string }>`
   border-radius: 4px;
   color: #fff;
   text-shadow: 1px 1px 0 #000;
+`;
+const LastFilmText = styled.div`
+  opacity: 0;
+  background-size: 200px 200px;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+`;
+const LastFilmTextH3 = styled.h3`
+  margin: 0;
 `;
 
 export class Pelicula extends React.Component<any> {
@@ -31,9 +43,11 @@ export class Pelicula extends React.Component<any> {
     const url = Base_url + File_size + imagen;
     return (
       <LastFilmItem img={url}>
-          <h3>{titulo}</h3>
+        <LastFilmText>
+          <LastFilmTextH3>{titulo}</LastFilmTextH3>
           <p>Fecha de estreno: {lanzamiento}</p>
           <span>Votos: {popularidad}</span>
+        </LastFilmText>
       </LastFilmItem>
     );
   }
