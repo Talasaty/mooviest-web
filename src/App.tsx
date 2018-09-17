@@ -3,7 +3,7 @@ import * as React from 'react';
 import Header from './Components/Header/Header.view';
 
 import Search from './Components/Search/Search.view';
-import LastFilm from './Components/LastFilm/LastFilm.view';
+import LastFilmList from './Components/LastFilmList/LastFilmList.view';
 
 class App extends React.Component {
   public render() {
@@ -11,7 +11,7 @@ class App extends React.Component {
       <div className="App">
         <Header/>
         <Search/>
-        <LastFilm/>
+        <LastFilmList/>
 
       </div>
     );
