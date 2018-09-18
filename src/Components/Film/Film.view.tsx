@@ -14,22 +14,25 @@ const LastFilmItem = styled.div<{ img: string }>`
   background-image: url(${p => p.img});
   background-size: 100%;
   border-radius: 4px;
-  color: #fff;
-  text-shadow: 1px 1px 0 #000;
 `;
 const LastFilmText = styled.div`
+  text-align: center;
+  vertical-align: middle;
   opacity: 0;
   background-size: 200px 200px;
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 2px 0% 0% 0%;
   &:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+    color: black
+    background-color: white;
   }
 `;
-const LastFilmTextH3 = styled.h3`
-  margin: 0;
-`;
+// const LastFilmTextH3 = styled.h3`
+//   margin: 0;
+// `;
 
 export class Pelicula extends React.Component<any> {
   constructor(props: any) {
@@ -37,16 +40,26 @@ export class Pelicula extends React.Component<any> {
   }
 
   render() {
-    const { titulo, popularidad, lanzamiento, imagen } = this.props;
+    const {
+      titulo,
+      popularidad,
+      lanzamiento,
+      imagen,
+      descripcion
+    } = this.props;
     const Base_url: string = "https://image.tmdb.org/t/p/";
     const File_size: string = "w500";
     const url = Base_url + File_size + imagen;
     return (
       <LastFilmItem img={url}>
         <LastFilmText>
-          <LastFilmTextH3>{titulo}</LastFilmTextH3>
-          <p>Fecha de estreno: {lanzamiento}</p>
-          <span>Votos: {popularidad}</span>
+          <h3>{titulo}</h3>
+          <h5>Release: {lanzamiento}</h5>
+          <h5>Popularity: {popularidad}</h5>
+          <h5>
+            Overview: {descripcion}
+            ...
+          </h5>
         </LastFilmText>
       </LastFilmItem>
     );

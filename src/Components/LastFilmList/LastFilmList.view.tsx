@@ -7,7 +7,7 @@ import { Pelicula } from "../Film/Film.view";
 const Lastfilmdiv = styled.div`
   position: relative;
   display: flex;
-  margin:  0;
+  margin: 0;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -31,6 +31,7 @@ class LastFilmList extends React.Component {
   }
 
   public render() {
+    console.log(this.state.listadoPeliculas);
     return (
       <div>
         <TituloLastFilm>Las 10 Más Votadas</TituloLastFilm>
@@ -43,6 +44,7 @@ class LastFilmList extends React.Component {
                 popularidad={pelicula.popularity}
                 lanzamiento={pelicula.release_date}
                 imagen={pelicula.poster_path}
+                descripcion={pelicula.overview.substr(0,50)}
               />
             );
           })}
