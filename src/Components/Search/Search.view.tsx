@@ -39,26 +39,28 @@ const InfoContainer = styled.div`
 `
 
 const Input = styled.input`
-    color: #075e54;
+    color: white; /*#075e54;*/
     padding: 10px;
     outline: none;
-    margin-top: 30px;
-    margin-left: 50px;
+    margin-top: 5%;
+    margin-left: 20%;
     background-color:rgba(0, 0, 0, 0.0);
-    border: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: none;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: none;
+    border-color: whitesmoke;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
     font-size: 30px;
-    width: 65%;
+    width: 40%;
+    &::-webkit-input-placeholder {
+    color: whitesmoke;
+  }
 `
 const Button = styled.button`
     margin-right: 5%;
     padding: 10px;  
     outline: none;
     background-color:rgba(0, 0, 0, 0.0);
-    color: rgba(0, 0, 0, 0.2);
+    color: whitesmoke;
     border: none;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: none;

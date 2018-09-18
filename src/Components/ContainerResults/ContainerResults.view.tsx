@@ -3,12 +3,14 @@ import styled from 'styled-components';
 
 
 const Contenedor = styled.div`
-    height: 100%;
+    
     min-height: 100vh;
+    min-width: 100vw;
     width: 100%;
-    background-color:rgba(51, 170, 51, .1);
-    display: flex;
-    flex-wrap: wrap;
+    background-color:rgba(0, 0, 0, .7);
+    z-index: 2;
+    top: 0px;
+    position: absolute;
 
 `
 

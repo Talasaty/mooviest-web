@@ -6,7 +6,8 @@ class Header extends React.Component {
   public render() {
     return (
       <div className="Header-wrapper">
-        <Navbar />
+        <Navbar/>
+
       </div>
     );
   }
