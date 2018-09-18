@@ -1,9 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
+import ButtonModal from '../ButtonModal/ButtonModal';
 
 interface StyleProps {
   hover: boolean;
 }
+
 
 const Navbar_wrapper = styled.nav`
   position: fixed;
@@ -11,7 +13,7 @@ const Navbar_wrapper = styled.nav`
   left: 0;
   width: 100%;
   height: 100px;
-  z-index: 999;
+  z-index: 1;
   padding-left: 35px;
   font-size: 1.2em;
   background: rgba(148, 0, 20, 1);
@@ -114,6 +116,7 @@ class Navbar extends React.Component {
   public render() {
     return (
       <div className="Navbar-wrapper">
+      <ButtonModal/>
         <Navbar_wrapper>
           <div>
             <Navbar_logo>M</Navbar_logo>
@@ -149,9 +152,11 @@ class Navbar extends React.Component {
                 <SubNavbar_li>Serie 2</SubNavbar_li>
               </SubNavbar_ul>
             </div>
+            
           </Navbar_ul>
+          
         </Navbar_wrapper>
-
+        
       </div>
     );
   }
