@@ -52,7 +52,7 @@ const Modal = styled.div<{show: boolean}>`
 
 class ButtonModal extends React.Component{
     state = {
-        showModal: true
+        showModal: false
     }
 
     handleModalShow = () =>{
